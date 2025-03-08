@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Search Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #e5dcee, #c7d8f3);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            background: linear-gradient(135deg, #ff7eb3, #ff758c);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff758c, #ff5c75);
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Search Resources</h2>
+        <form action="search" method="post">
+            <label>Project Name:</label>
+            <input type="text" name="projectName" required>
+
+            <label>Maximum Experience (years):</label>
+            <input type="number" name="experience" required>
+
+            <label>Skills (comma-separated):</label>
+            <input type="text" name="skills" placeholder="Java, Python, SQL" required>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+</body>
+</html>

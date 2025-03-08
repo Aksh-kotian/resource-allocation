@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Register Resource</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(255, 128, 0);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Success and Error Messages -->
+        <div th:if="${message}" class="message success">
+            <span th:text="${message}"></span>
+        </div>
+        <div th:if="${errmessage}" class="message error">
+            <span th:text="${errmessage}"></span>
+        </div>
+
+        <h2>Register Resource</h2>
+        
+        <form action="resourceRegister" method="post">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="resourceName" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Experience (years):</label>
+                <input type="number" name="experience" required min="0">
+            </div>
+            
+            <div class="form-group">
+                <label>Skills (comma-separated):</label>
+                <input type="text" name="skills" placeholder="Java, Python, SQL" required>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
